@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333333; line-height: 1.6; padding: 20px; background-color: #f8f9fa; }
+  .container { max-width: 700px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+  .header { background-color: #D47A00; color: #ffffff; padding: 20px; text-align: center; }
+  .header h2 { margin: 0; font-size: 18px; letter-spacing: 0.5px; }
+  .content { padding: 25px; }
+  /* Custom styles that will automatically apply to the Power Automate HTML table output */
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 13px; }
+  table th, table td { border: 1px solid #e0e0e0; padding: 10px 12px; text-align: left; }
+  table th { background-color: #F8F9FA; font-weight: bold; color: #555555; }
+  table tr:nth-child(even) { background-color: #fafafa; }
+  .footer { background-color: #f8f9fa; padding: 15px; text-align: center; font-size: 11px; color: #777777; border-top: 1px solid #e0e0e0; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>CẢNH BÁO: HÓA ĐƠN NHÀ CUNG CẤP SẮP ĐẾN HẠN</h2>
+    </div>
+    <div class="content">
+      <p>Kính gửi <strong>Phòng Kế toán Công nợ</strong>,</p>
+      <p>Hệ thống tự động ghi nhận danh sách các hóa đơn mua hàng (AP) từ nhà cung cấp sẽ đến hạn thanh toán trong vòng **5 ngày tới**. Kính đề nghị phòng ban xem xét sắp xếp nguồn tiền chi trả:</p>
+      
+      <!-- Chèn Output của Action 'Create HTML table' bên dưới dòng này -->
+      [INSERT_HTML_TABLE_OUTPUT_HERE]
+      
+      <p>Vui lòng tiến hành đối chiếu kỹ chứng từ giao nhận trước khi lập phiếu chi hoặc ủy nhiệm chi thanh toán.</p>
+    </div>
+    <div class="footer">
+      <p>Báo cáo tự động từ Hệ thống Quản lý Công nợ. Vui lòng không trả lời trực tiếp email này.</p>
+    </div>
+  </div>
+</body>
+</html>

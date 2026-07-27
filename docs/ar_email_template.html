@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #333333; line-height: 1.6; background-color: #f4f6f9; margin: 0; padding: 20px; }
+  .container { max-width: 600px; margin: 0 auto; background-color: #ffffff; border: 1px solid #e0e0e0; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); }
+  .header { background-color: #A83232; color: #ffffff; padding: 25px; text-align: center; }
+  .header h2 { margin: 0; font-size: 20px; letter-spacing: 1px; }
+  .content { padding: 30px; }
+  .greeting { font-size: 16px; font-weight: bold; }
+  .table { width: 100%; border-collapse: collapse; margin: 25px 0; font-size: 14px; }
+  .table th, .table td { border: 1px solid #e0e0e0; padding: 12px 15px; text-align: left; }
+  .table th { background-color: #f8f9fa; color: #555555; font-weight: bold; width: 35%; }
+  .table td { color: #333333; }
+  .highlight { color: #A83232; font-weight: bold; }
+  .notice { background-color: #fff3f3; border-left: 4px solid #A83232; padding: 15px; margin: 20px 0; font-size: 14px; color: #666666; }
+  .footer { background-color: #f8f9fa; padding: 20px; text-align: center; font-size: 12px; color: #777777; border-top: 1px solid #e0e0e0; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h2>THÔNG BÁO QUÁ HẠN THANH TOÁN</h2>
+    </div>
+    <div class="content">
+      <p class="greeting">Kính gửi Quý khách hàng <strong>@{items('Apply_to_each')?['CustomerName']}</strong>,</p>
+      <p>Hệ thống tài chính của chúng tôi ghi nhận quý khách có khoản công nợ chưa hoàn tất thanh toán. Chi tiết hóa đơn quá hạn như sau:</p>
+      
+      <table class="table">
+        <tr>
+          <th>Số hóa đơn</th>
+          <td><strong>@{items('Apply_to_each')?['InvoiceNumber']}</strong></td>
+        </tr>
+        <tr>
+          <th>Ngày phát hành</th>
+          <td>@{items('Apply_to_each')?['InvoiceDate']}</td>
+        </tr>
+        <tr>
+          <th>Hạn thanh toán</th>
+          <td>@{items('Apply_to_each')?['DueDate']}</td>
+        </tr>
+        <tr>
+          <th>Số ngày quá hạn</th>
+          <td class="highlight">@{items('Apply_to_each')?['OverdueDays']} ngày</td>
+        </tr>
+        <tr>
+          <th>Số tiền còn nợ</th>
+          <td class="highlight">@{items('Apply_to_each')?['RemainingAmount']} VNĐ</td>
+        </tr>
+      </table>
+      
+      <div class="notice">
+        <strong>Lưu ý:</strong> Kính đề nghị Quý khách vui lòng sắp xếp thanh toán khoản nợ trên trước ngày <strong>@{addDays(utcNow(), 3, 'yyyy-MM-dd')}</strong> để tránh ảnh hưởng đến hạn mức tín dụng và các đơn đặt hàng tiếp theo.
+      </div>
+      
+      <p>Nếu Quý khách đã thực hiện chuyển khoản thanh toán, vui lòng gửi lại hình ảnh ủy nhiệm chi/biên lai giao dịch để kế toán đối chiếu và cập nhật hệ thống.</p>
+      <p>Mọi thắc mắc vui lòng liên hệ phòng kế toán qua email: <em>ke-toan-cong-no@company.com</em>.</p>
+      <p>Trân trọng cảm ơn sự hợp tác của Quý khách!</p>
+    </div>
+    <div class="footer">
+      <p>Đây là email tự động gửi từ Hệ thống Quản lý Công nợ. Vui lòng không trả lời trực tiếp email này.</p>
+    </div>
+  </div>
+</body>
+</html>
