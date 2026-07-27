@@ -27,7 +27,7 @@ function Execute-SqlScript {
         return
     }
 
-    $content = Get-Content -Path $filePath -Raw
+    $content = Get-Content -Path $filePath -Encoding UTF8 -Raw
     
     # Phân tách file SQL thành các Batch độc lập dựa trên từ khóa GO nằm riêng lẻ trên một dòng
     # Sử dụng Regex để tách nhằm đảm bảo độ chính xác
