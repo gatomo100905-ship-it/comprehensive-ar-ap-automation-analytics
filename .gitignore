@@ -1,0 +1,20 @@
+# Excel temporary files
+~$*.xlsx
+~$*.xlsm
+~$*.xls
+~$*.csv
+
+# SQL Server temp/log files (if any local backups are made)
+*.bak
+*.ldf
+*.mdf
+
+# Windows system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# VS Code and IDE settings
+.vscode/
+.idea/
+*.log
